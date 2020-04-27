@@ -31,7 +31,7 @@ namespace Tests
         }
         public static void OnProcessExpcetion(object sender, ProcessScanExpcetion processExcpetion)
         {
-            AssertFail($"[Event] process scanner exception, {processExcpetion.Exception.Message}");
+            AssertFail($"[Event] process scanner exception at process {processExcpetion.Process.ProcessName}, {processExcpetion.Exception.Message}");
         }
         public static void OnScannerStart(object sender, Scanner scanner)
         {

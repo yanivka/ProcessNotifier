@@ -120,6 +120,7 @@ namespace ProcessNotifier
         {
             try
             {
+                if (process.Id == 0) return false; // Fix for idle process in windows
                 if (this.processHistory.ContainsKey(process.Id))
                 {
                     if (((DateTime)this.processHistory[process.Id]) == process.StartTime)
